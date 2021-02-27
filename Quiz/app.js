@@ -1,4 +1,5 @@
-const correctAnswers = ['B', 'B', 'B', 'B']
+var _0xc462=["\x43","\x41","\x42"];
+const correctAnswers=[_0xc462[0],_0xc462[1],_0xc462[2],_0xc462[0]]
 const form = document.querySelector('.quiz-form')
 const resultSection = document.querySelector('.result')
 let numberOfQuestions = 4
