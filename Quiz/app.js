@@ -1,10 +1,19 @@
-var _0xc462=["\x43","\x41","\x42"]
-const correctAnswers=[_0xc462[0],_0xc462[1],_0xc462[2],_0xc462[0]]
+// var _0xc462=["\x43","\x41","\x42"]
+// const correctAnswers=[_0xc462[0],_0xc462[1],_0xc462[2],_0xc462[0]]
+const correctAnswers = ['C', 'A', 'B', 'C']
 const form = document.querySelector('.quiz-form')
 const resultSection = document.querySelector('.result')
 let questionBlocks = Array.from(form.children)
 questionBlocks.pop()
 let numberOfQuestions = 4
+// const correctLabels = correctAnswers.map((correctAnswer, index) => {
+//     // console.log(`label[for = ${`form.q${index+1}${correctAnswer}.id`}]`)
+//     return document.querySelector(`label[for = ${`form.q${index+1}${correctAnswer}.id`}]`).textContent
+// })
+// console.log(correctLabels)
+// console.log(document.querySelector(`label[for = ${form.q1A.id}]`).textContent)
+
+
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
