@@ -45,7 +45,7 @@ form.addEventListener('submit', (e) => {
             output++
     }, 8)
 
-    correctLabels.forEach((label, index) => {
-        questionBlocks[wrongIndexes[index]].innerHTML += `<div class="text-right"><span class="font-weight-bold">Correct Answer: </span>${label}`
+    correctLabels.forEach((label, index, correctLabels) => {
+        questionBlocks[wrongIndexes[index]].innerHTML += `<div class="text-right"><span class="font-weight-bold">Correct Answer: </span>${correctLabels[wrongIndexes[index]]}`
     })
 })
