@@ -1,10 +1,10 @@
-var _0xc462=["\x43","\x41","\x42"]
+let _0xc462=["\x43","\x41","\x42"]
 const correctAnswers=[_0xc462[0],_0xc462[1],_0xc462[2],_0xc462[0]]
 const form = document.querySelector('.quiz-form')
 const resultSection = document.querySelector('.result')
-let questionBlocks = Array.from(form.children)
+const questionBlocks = Array.from(form.children)
 questionBlocks.pop()
-let numberOfQuestions = 4
+const numberOfQuestions = 4
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -28,16 +28,11 @@ form.addEventListener('submit', (e) => {
         questionBlocks[index].classList.add("border", "border-danger", "rounded", "p-5")
     })
 
-    const correctLabels = correctAnswers.map((correctAnswer, index) => {
-        const questionId = form[`q${index + 1}${correctAnswer}`].id
-        return document.querySelector(`label[for = "${questionId}"]`).textContent
-    })
-
     userScore = (correctIndexes.length/numberOfQuestions)*100
     scrollTo(0, 0)
     resultSection.classList.remove('d-none')
     let output = 0
-    const timer = setInterval(()=>{
+    const timer = setInterval(() => {
         resultSection.querySelector('span').textContent =`${output}%`
         if(output === userScore)
             clearInterval(timer)
@@ -45,7 +40,16 @@ form.addEventListener('submit', (e) => {
             output++
     }, 8)
 
-    correctLabels.forEach((label, index) => {
-        questionBlocks[wrongIndexes[index]].innerHTML += `<div class="text-right"><span class="font-weight-bold">Correct Answer: </span>${label}`
+    const correctLabels = correctAnswers.map((correctAnswer, index) => {
+        const questionId = form[`q${index + 1}${correctAnswer}`].id
+        return document.querySelector(`label[for = "${questionId}"]`).textContent
     })
+
+    correctLabels.forEach((label, index) => {
+        if(wrongIndexes.includes(index)){
+            questionBlocks[index].innerHTML += `<div class="text-right"><span class="font-weight-bold">Correct Answer: </span>${label}`
+        }
+    })
+
+    document.querySelector('.btn').disabled = true
 })
