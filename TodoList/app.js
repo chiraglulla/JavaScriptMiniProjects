@@ -1,6 +1,6 @@
 const addField = document.querySelector('.add')
 const list = document.querySelector('.works')
-
+// const search = document.querySelector('#search')
 
 const getTemplate = function(work){
     const html = `
@@ -11,6 +11,10 @@ const getTemplate = function(work){
     `
     list.innerHTML += html
 }
+
+// const filteredTodo = function(term){
+//     console.log(Array.from(list.childNodes))
+// }
 
 //add work
 addField.addEventListener('submit', e => {
@@ -29,3 +33,10 @@ list.addEventListener('click', e => {
         e.target.parentNode.remove()
     } 
 })
+
+// //search work
+// search.addEventListener('keyup', () => {
+//     let term = search.value.trim().toLowerCase()
+//     filteredTodo(term)
+// })
+
