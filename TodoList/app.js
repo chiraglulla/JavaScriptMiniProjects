@@ -12,6 +12,7 @@ const getTemplate = function(work){
     list.innerHTML += html
 }
 
+//add work
 addField.addEventListener('submit', e => {
     e.preventDefault()
 
@@ -20,4 +21,11 @@ addField.addEventListener('submit', e => {
         getTemplate(work)
         addField.reset()
     }
+})
+
+//delete work
+list.addEventListener('click', e => {
+    if(e.target.classList.contains('delete')){
+        e.target.parentNode.remove()
+    } 
 })
