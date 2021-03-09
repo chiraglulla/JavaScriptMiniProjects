@@ -1,6 +1,6 @@
 const addField = document.querySelector('.add')
 const list = document.querySelector('.works')
-// const search = document.querySelector('#search')
+const search = document.querySelector('#search')
 
 const getTemplate = function(work){
     const html = `
@@ -12,9 +12,17 @@ const getTemplate = function(work){
     list.innerHTML += html
 }
 
-// const filteredTodo = function(term){
-//     console.log(Array.from(list.childNodes))
-// }
+//filter
+const filterTodos = function(term){
+    Array.from(list.children)
+    .filter(work => !work.textContent.toLowerCase().includes(term))
+    .forEach(work => work.classList.add('filtered'));
+
+    Array.from(list.children)
+    .filter(work => work.textContent.toLowerCase().includes(term))
+    .forEach(work => work.classList.remove('filtered'));
+}
+
 
 //add work
 addField.addEventListener('submit', e => {
@@ -34,9 +42,10 @@ list.addEventListener('click', e => {
     } 
 })
 
-// //search work
-// search.addEventListener('keyup', () => {
-//     let term = search.value.trim().toLowerCase()
-//     filteredTodo(term)
-// })
+//search work
+search.addEventListener('keyup', () => {
+    let term = search.value.trim().toLowerCase()
+    // console.log(term)
+    filterTodos(term)
+})
 
