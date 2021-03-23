@@ -5,11 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="shortcut icon" type="image/png" href="./imgs/favicon.svg">
     <link rel="stylesheet" href="./styles.css">
     <title>Know Weather Around</title>
 </head>
 <body>
+
+    <div class="container my-5 mx-auto">
+
+        <h1 class="text-muted text-center my-4">Know Weather Around</h1>
     
+        <form class="change-location my-4 text-center text-muted">
+          <label for="city">Enter a location for weather information</label>
+          <input type="text" name="city" class="form-control p-2">
+        </form>
+        
+        <div class="card shadow-lg rounded">
+          <img src="https://via.placeholder.com/400x200" class="time card-img-top">
+          <div class="icon bg-light mx-auto text-center">
+            <!-- icon here later -->
+          </div>
+          <div class="details text-muted text-uppercase text-center">
+            <h5 class="my-3">City name</h5>
+            <div class="my-3">Weather condition</div>
+            <div class="display-4 my-4">
+              <span>temp</span>
+              <span>&deg;C</span>
+            </div>
+          </div>
+        </div>
+        
+      </div> 
+
+
     <script src="./js/app.js"></script>
     <script src="./js/script.js"></script>
 </body>
