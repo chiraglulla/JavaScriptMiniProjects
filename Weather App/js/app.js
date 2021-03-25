@@ -1,4 +1,4 @@
-const api_key = 'ASUeXLNnZj3GfckwxqnZijNXvFcdv7YJ'
+const api_key = 'gmDftoJHYlo0ACeLAixnbGXup7xlpeeE'
 
 const get_weather_info = async (key) => {
     const base_url = 'http://dataservice.accuweather.com/currentconditions/v1/'
@@ -6,6 +6,7 @@ const get_weather_info = async (key) => {
 
     const response = await fetch(base_url + query)
     const data = await response.json()
+
     return data[0]
 }
 
