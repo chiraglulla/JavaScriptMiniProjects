@@ -1,4 +1,4 @@
-const api_key = 'CqkNBjmSKFeL5Wt2TyLXPNSAlWtBwkbj'
+const api_key = 'ASUeXLNnZj3GfckwxqnZijNXvFcdv7YJ'
 
 const get_weather_info = async (key) => {
     const base_url = 'http://dataservice.accuweather.com/currentconditions/v1/'
@@ -6,8 +6,7 @@ const get_weather_info = async (key) => {
 
     const response = await fetch(base_url + query)
     const data = await response.json()
-
-    console.log(data)
+    return data[0]
 }
 
 const get_city_info = async (city_name) => {
@@ -19,7 +18,3 @@ const get_city_info = async (city_name) => {
     
     return data[0]
 }
-
-get_city_info('mumbai')
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
