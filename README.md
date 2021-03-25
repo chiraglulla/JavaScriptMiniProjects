@@ -8,6 +8,6 @@ _These are some JavaScript projects I made while learning. Every project is in d
   
   ----
   
-  ## Work List
+## Work List
   A simple TodoList having an add, delete, search feature. Using JS DOM, Higher Order functions in JS. 
   [WorkList](https://chiraglulla239.github.io/JavaScriptMiniProjects/TodoList/index.html)
