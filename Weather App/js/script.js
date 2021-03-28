@@ -49,4 +49,11 @@ change_location_form.addEventListener('submit', (e) => {
     update_city_info(city_name)
         .then(data => updateUI(data))
         .catch(err => console.log(err))
+
+    localStorage.setItem('location', city_name)
 })
+
+if(localStorage.length){
+    update_city_info(localStorage.getItem('location'))
+        .then(data => updateUI(data))
+}

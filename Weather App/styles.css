@@ -1,11 +1,17 @@
 body{
-    background: #eeedec;
+    background: #161b22;
     letter-spacing: 0.2em;
     font-size: 0.8em;
 }
 
 .container{
     max-width: 400px;
+}
+
+input[type="text"], input[type="text"]:focus  {
+    color: #fff;
+    border: none;
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .icon{
