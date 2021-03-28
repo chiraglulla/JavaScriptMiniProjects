@@ -8,6 +8,14 @@ _These are some JavaScript projects I made while learning. Every project is in d
   
   ----
   
-  ## Work List
+## Work List
   A simple TodoList having an add, delete, search feature. Using JS DOM, Higher Order functions in JS. 
   [WorkList](https://chiraglulla239.github.io/JavaScriptMiniProjects/TodoList/index.html)
+  
+  ----
+
+## Know Weather Around 
+  A weather forecast app, wherein you enter the location of which you need to know the weather.
+  Using JS DOM, Asynchronous behaviour in JS
+  
+  [Know Weather Around](https://chiraglulla239.github.io/JavaScriptMiniProjects/Weather%20App/index.html)
