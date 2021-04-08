@@ -3,6 +3,7 @@ const card = document.querySelector('.card')
 const detail = document.querySelector('.details')
 const timeImage = document.querySelector('body > div > div > img')
 const iconImage = document.querySelector('.icon img')
+const forecast = new Forecast()
 
 const updateUI = function(data){
     //object destructuring in action
@@ -33,20 +34,12 @@ const updateUI = function(data){
     iconImage.setAttribute('src', iconSrc)
     }
 
-const update_city_info = async function(city_name) {
-
-    const city = await get_city_info(city_name)
-    const weather = await get_weather_info(city.Key)
-    
-    return { city, weather }
-}
-
 change_location_form.addEventListener('submit', (e) => {
     e.preventDefault()
     let city_name = change_location_form.city.value.trim()
     change_location_form.reset()
 
-    update_city_info(city_name)
+    forecast.update_city_info(city_name)
         .then(data => updateUI(data))
         .catch(err => console.log(err))
 
@@ -54,6 +47,6 @@ change_location_form.addEventListener('submit', (e) => {
 })
 
 if(localStorage.length){
-    update_city_info(localStorage.getItem('location'))
+    forecast.update_city_info(localStorage.getItem('location'))
         .then(data => updateUI(data))
 }
