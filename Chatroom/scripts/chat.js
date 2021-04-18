@@ -3,7 +3,7 @@ class ChatRoom {
         this.room = room
         this.username = username
         this.chats = db.collection('chats')
-        this.unsubscribe;
+        this.unsubscribe
     }
 
     async addChat(message) {
@@ -24,6 +24,7 @@ class ChatRoom {
             .where('room', '==', this.room)
             .orderBy('created_at')
             .onSnapshot(snapshot => {
+                // console.log(snapshot.empty)
                 snapshot.docChanges().forEach(change => {
                     render(change.doc.data())
                 })
@@ -32,11 +33,11 @@ class ChatRoom {
 
     updateName(username){
         this.username = username
+        localStorage.setItem('username', username)
     }
 
     updateRoom(room) {
         this.room = room
-        console.log("room updated")
         if(this.unsub)
             this.unsubscibe()
     }
