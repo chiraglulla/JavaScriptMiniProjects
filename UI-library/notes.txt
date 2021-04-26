@@ -1,0 +1,2 @@
+"babel": ".\\node_modules\\.bin\\babel.cmd src/index.js -w -o dist/assets/bundle.js",
+"webpack": ".\\node_modules\\.bin\\webpack.cmd -w",
